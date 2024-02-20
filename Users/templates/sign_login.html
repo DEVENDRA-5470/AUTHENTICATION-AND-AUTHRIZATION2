@@ -1,0 +1,120 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<section class="text-white body-font bg-slate-400 " style="height: 665px; transition: 1s all;">
+    <div class="container py-3 mx-auto flex flex-wrap items-center">
+      <div class="lg:w-3/5 md:w-1/2 md:pr-16 lg:pr-0 pr-0">
+        <h1 class="title-font font-medium text-3xl text-gray-900">Slow-carb next level shoindcgoitch ethical authentic, poko scenester</h1>
+        <p class="leading-relaxed mt-3">Poke slow-carb mixtape knausgaard, typewriter street art gentrify hammock starladder roathse. Craies vegan tousled etsy austin.</p>
+        <button class="text-white bg-green-500 border-0 py-2 px-8 focus:outline-none hover:bg-green-600 rounded text-lg" >View More</button>
+      </div>
+
+      <div class="lg:w-2/6 md:w-1/2 bg-gray-100 rounded-lg p-8 flex flex-col md:ml-auto w-full mt-1 md:mt-0">
+        <form action="{% url 'sign_login' %}" id="signup_form" class="hidden" method="post" >
+          {% csrf_token %}
+        <h2 class="text-gray-900 text-lg font-medium title-font mb-1">Register as Student</h2>
+        <div class="relative mb-2">
+          <label for="full-name" class="leading-7 text-sm text-gray-600">User Name</label>
+          <input type="text" id="full-name" name="username" class="w-full bg-white rounded border border-gray-300 focus:border-green-500 focus:ring-2 focus:ring-green-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out">
+        </div>
+        <div class="relative mb-2">
+          <label for="email" class="leading-7 text-sm text-gray-600">First Name</label>
+          <input type="text" id="email" name="firstname" class="w-full bg-white rounded border border-gray-300 focus:border-green-500 focus:ring-2 focus:ring-green-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out">
+        </div>
+        <div class="relative mb-2">
+          <label for="email" class="leading-7 text-sm text-gray-600">Last Name</label>
+          <input type="text" id="email" name="lastname" class="w-full bg-white rounded border border-gray-300 focus:border-green-500 focus:ring-2 focus:ring-green-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out">
+        </div>
+        <div class="relative mb-2">
+          <label for="email" class="leading-7 text-sm text-gray-600">Email Address</label>
+          <input type="email" id="email" name="email" class="w-full bg-white rounded border border-gray-300 focus:border-green-500 focus:ring-2 focus:ring-green-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out">
+        </div>
+        <div class="relative mb-2">
+          <label for="email" class="leading-7 text-sm text-gray-600">Password</label>
+          <input type="text" id="email" name="password1" class="w-full bg-white rounded border border-gray-300 focus:border-green-500 focus:ring-2 focus:ring-green-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out">
+        </div>
+        <div class="relative mb-2">
+          <label for="email" class="leading-7 text-sm text-gray-600">Confirm Password</label>
+          <input type="text" id="email" name="password2" class="w-full bg-white rounded border border-gray-300 focus:border-green-500 focus:ring-2 focus:ring-green-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out">
+        </div>
+        <button class="text-white bg-green-500 border-0 py-2 px-8 focus:outline-none hover:bg-green-600 rounded text-lg"><input type="submit" name="student" value="Sign Up"></button>
+        <p class="text-x text-red-600 mt-3" onclick="toggleForms()">Sign In as Tutor</p>
+      </form>
+
+      <div >
+
+        <form action="{% url 'sign_login' %}"  class="" method="post" id="login_form" >
+          {% csrf_token %}
+        <h2 class="text-gray-900 text-lg font-medium title-font mb-1">Register as Tutor</h2>
+        <div class="relative mb-2">
+          <label for="full-name" class="leading-7 text-sm text-gray-600">User Name</label>
+          <input type="text" id="full-name" name="username" class="w-full bg-white rounded border border-gray-300 focus:border-green-500 focus:ring-2 focus:ring-green-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out">
+        </div>
+        <div class="relative mb-2">
+          <label for="email" class="leading-7 text-sm text-gray-600">First Name</label>
+          <input type="text" id="email" name="firstname" class="w-full bg-white rounded border border-gray-300 focus:border-green-500 focus:ring-2 focus:ring-green-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out">
+        </div>
+        <div class="relative mb-2">
+          <label for="email" class="leading-7 text-sm text-gray-600">Last Name</label>
+          <input type="text" id="email" name="lastname" class="w-full bg-white rounded border border-gray-300 focus:border-green-500 focus:ring-2 focus:ring-green-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out">
+        </div>
+        <div class="relative mb-2">
+          <label for="email" class="leading-7 text-sm text-gray-600">Email Address</label>
+          <input type="email" id="email" name="email" class="w-full bg-white rounded border border-gray-300 focus:border-green-500 focus:ring-2 focus:ring-green-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out">
+        </div>
+        <div class="relative mb-2">
+          <label for="email" class="leading-7 text-sm text-gray-600">Password</label>
+          <input type="text" id="email" name="password1" class="w-full bg-white rounded border border-gray-300 focus:border-green-500 focus:ring-2 focus:ring-green-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out">
+        </div>
+        <div class="relative mb-2">
+          <label for="email" class="leading-7 text-sm text-gray-600">Confirm Password</label>
+          <input type="text" id="email" name="password2" class="w-full bg-white rounded border border-gray-300 focus:border-green-500 focus:ring-2 focus:ring-green-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out">
+        </div>
+        <button class="text-white bg-green-500 border-0 py-2 px-8 focus:outline-none hover:bg-green-600 rounded text-lg"><input type="submit" name="tutor" value="Sign Up"></button>
+        <p class="text-x text-red-600 mt-3" onclick="toggleForms()">Sign In as Students</p>
+      </form>
+
+        <!-- <form action="" method="post" id="login_form" class="" >
+          {% csrf_token %}
+          <h2 class="text-gray-900 text-lg font-medium title-font mb-1">Login</h2>
+        <div class="relative mb-2">
+            <label for="username" class="leading-7 text-sm text-gray-600">User Name</label>
+            <input type="text" id="username" name="username" class="w-full bg-white rounded border border-gray-300 focus:border-green-500 focus:ring-2 focus:ring-green-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out">
+        </div>
+        <div class="relative mb-2">
+          <label for="password" class="leading-7 text-sm text-gray-600">Password</label>
+            <input type="password" id="password" name="password1" class="w-full bg-white rounded border border-gray-300 focus:border-green-500 focus:ring-2 focus:ring-green-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out">
+        </div>
+        <button class="text-white bg-green-500 border-0 py-2 px-8 focus:outline-none hover:bg-green-600 rounded text-lg"><input type="submit" name="login" value="Login"></button>
+        <p class="text-xs text-gray-500 mt-3 " onclick="toggleForms()" >Don't have an account? Sign Up</p>
+      </form> -->
+    </div>
+    
+  </div>
+    </div>
+  </section>
+
+
+
+
+  <script>
+    function toggleForms() {
+        console.log("Function called");
+
+        const loginForm = document.getElementById('login_form');
+        const signupForm = document.getElementById('signup_form');
+
+        if (loginForm && signupForm) {
+            console.log("Elements found");
+
+            // Toggle the 'hidden' class to show/hide forms
+            loginForm.classList.toggle('hidden');
+            signupForm.classList.toggle('hidden');
+        } else {
+            console.log("Elements not found");
+        }
+    }
+</script>
+
+  
+{% endblock content %}
